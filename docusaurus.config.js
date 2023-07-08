@@ -1,8 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -10,7 +8,7 @@ const config = {
   tagline: 'A Server for Disocrd',
   favicon: 'img/logo-notext.svg',
 
-  url: 'https://docs-babblebot.bdavies.net',
+  url: 'https://docs.babblebot.net',
   baseUrl: '/',
 
   organizationName: 'babblebot-server',
@@ -37,14 +35,10 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/babblebot-server/docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -58,6 +52,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        disableSwitch: true,
+        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         title: 'Babblebot Server',
         logo: {
@@ -71,9 +70,16 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/babblebot-server/server',
+            type: 'docSidebar',
+            sidebarId: 'api',
+            position: 'left',
+            label: 'API Reference',
+          },
+          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/plugins', label: 'Plugins', position: 'left'},
+          {
+            href: 'https://code.babblebot.net',
             label: 'GitHub',
             position: 'right',
           },
@@ -109,7 +115,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/babblebot-server/server',
+                href: 'https://code.babblebot.net',
               },
             ],
           },
@@ -117,8 +123,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Babblebot-Server; Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        // theme: darkCodeTheme,
+        additionalLanguages: ['yaml']
       },
     }),
 };
