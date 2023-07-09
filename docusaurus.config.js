@@ -25,6 +25,15 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    require.resolve("@cmfcmf/docusaurus-search-local"),
+    '@docusaurus/plugin-google-gtag',
+    {
+      trackingID: 'G-1Q6PP2RV0V',
+      anonymizeIP: true,
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -82,6 +91,10 @@ const config = {
             href: 'https://code.babblebot.net',
             label: 'GitHub',
             position: 'right',
+          },
+          {
+            type: 'search',
+            position: 'right'
           },
         ],
       },
