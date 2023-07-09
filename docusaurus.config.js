@@ -27,11 +27,6 @@ const config = {
 
   plugins: [
     require.resolve("@cmfcmf/docusaurus-search-local"),
-    '@docusaurus/plugin-google-gtag',
-    {
-      trackingID: 'G-1Q6PP2RV0V',
-      anonymizeIP: true,
-    },
   ],
 
   presets: [
